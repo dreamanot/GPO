@@ -1,0 +1,55 @@
+--GrassLands 3978370137
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+    end
+
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+
+function Twn(HRP, Place, Length)
+    local Twn =
+        game:GetService("TweenService"):Create(
+        HRP,
+        TweenInfo.new(Length, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+        {CFrame = Place}
+    )
+    Twn:Play()
+    Twn.Completed:Wait()
+end
+ 
+local Live = game:GetService("Workspace").PlayerCharacters
+local Char = Live:WaitForChild(game.Players.LocalPlayer.Name)
+
+-- Sky | 0
+-- -8.58153152, 160.53035164, 125.647552
+-- | 1
+--  442.979401, 10.8836193, 158.840622
+-- | 2
+-- -49.17836, 10.8836212, 558.669067
+-- | 3
+-- -469.447693, 10.8836193, 132.6922
+
+
+mouse.KeyDown:connect(function(key)
+    if key == "y" then
+        Twn(Char:WaitForChild("HumanoidRootPart"), CFrame.new(-8.58153152, 160.53035164, 125.647552), 2.5)
+    end
+end)
+
+mouse.KeyDown:connect(function(key1)
+    if key1 == "u" then
+        Twn(Char:WaitForChild("HumanoidRootPart"), CFrame.new(442.979401, 10.8836193, 158.840622), 2.5)
+    end
+end)
+
+mouse.KeyDown:connect(function(key2)
+    if key2 == "v" then
+        Twn(Char:WaitForChild("HumanoidRootPart"), CFrame.new(-49.17836, 10.8836212, 558.669067), 2.5)
+    end
+end)
+
+mouse.KeyDown:connect(function(key3)
+    if key3 == "b" then
+        Twn(Char:WaitForChild("HumanoidRootPart"), CFrame.new(-469.447693, 10.8836193, 132.6922), 2.5)
+    end
+end)
