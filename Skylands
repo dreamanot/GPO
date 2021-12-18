@@ -1,0 +1,50 @@
+--Skypia
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+    end
+
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+
+function Twn(HRP, Place, Length)
+    local Twn =
+        game:GetService("TweenService"):Create(
+        HRP,
+        TweenInfo.new(Length, Enum.EasingStyle.Quad, Enum.EasingDirection.InOut),
+        {CFrame = Place}
+    )
+    Twn:Play()
+    Twn.Completed:Wait()
+end
+ 
+local Live = game:GetService("Workspace").PlayerCharacters
+local Char = Live:WaitForChild(game.Players.LocalPlayer.Name)
+
+-- Sky | 0
+-- Pyramid? | 1
+-- Cave | 2
+-- Cave | 3
+
+mouse.KeyDown:connect(function(key)
+    if key == "y" then
+        Twn(Char:WaitForChild("HumanoidRootPart"), CFrame.new(-477.7854, 160.84761, -255.823349), 2.5)
+    end
+end)
+
+mouse.KeyDown:connect(function(key1)
+    if key1 == "u" then
+        Twn(Char:WaitForChild("HumanoidRootPart"), CFrame.new(-481.598206, 16.3008308, 173.104156), 2.5)
+    end
+end)
+
+mouse.KeyDown:connect(function(key2)
+    if key2 == "v" then
+        Twn(Char:WaitForChild("HumanoidRootPart"), CFrame.new(-483.620422, 16.3008289, -725.13916), 2.5)
+    end
+end)
+
+mouse.KeyDown:connect(function(key3)
+    if key3 == "b" then
+        Twn(Char:WaitForChild("HumanoidRootPart"), CFrame.new(-18.9164333, 16.300581, -255.110764), 2.5)
+    end
+end)
